@@ -8,7 +8,7 @@ Want to know "How to run highly available sensugo cluster with external ETCD run
 
 ## Prerequisites 
 * Working kubernetes cluster with admin privilege.
-* storageclass with the name `performace-retain` for volumes to be configured dynamically for `ETCD` and `InfluxDB`. Feel free to change it in the files or create one within cluster.
+* storageclass with the name `performance-retain` for volumes to be configured dynamically for `ETCD` and `InfluxDB`. Feel free to change it in the files or create one within cluster.
 
 ## Setup
 
@@ -35,6 +35,8 @@ kubectl apply -f .
 cd ../sensugo
 kubectl apply -f .
 ```
+
+Access `sensu-dashboard` at URL configured in ingress with the hostname `sensu-dashboard.example.com`. There should be a dashbboad up and running.
 
 ## Extract metrics and visualisation using Grafana (Optional)
 
