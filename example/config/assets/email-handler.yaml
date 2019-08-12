@@ -1,8 +1,0 @@
-api_version: core/v2
-type: Asset
-metadata:
-  namespace: devops
-  name: email-handler
-spec:
-  url: https://assets.bonsai.sensu.io/45eaac0851501a19475a94016a4f8f9688a280f6/sensu-email-handler_0.2.0_linux_amd64.tar.gz
-  sha512: d69df76612b74acd64aef8eed2ae10d985f6073f9b014c8115b7896ed86786128c20249fd370f30672bf9a11b041a99adb05e3a23342d3ad80d0c346ec23a946

@@ -1,8 +1,0 @@
-api_version: core/v2
-type: Asset
-metadata:
-  namespace: devops
-  name: sensu-plugins-http
-spec:
-  url: https://github.com/sensu-plugins/sensu-plugins-http/releases/download/5.1.1/sensu-plugins-http_5.1.1_debian_linux_amd64.tar.gz
-  sha512: 33a9f42093bad643fa8b93d773f708fc1adc3931c60561bd8ad5b9fff57422e20b5352568fadf20af1b21d0be3547868a8746f0f067b82c102a65a0e445b824f

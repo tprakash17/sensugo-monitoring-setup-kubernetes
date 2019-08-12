@@ -1,8 +1,0 @@
-api_version: core/v2
-type: Asset
-metadata:
-  namespace: devops
-  name: ruby-runtime
-spec:
-  url: https://assets.bonsai.sensu.io/03d08cdfc649500b7e8cd1708bb9bb93d91fea9e/sensu-ruby-runtime_0.0.8_ruby-2.4.4_alpine_linux_amd64.tar.gz
-  sha512: 5e8ec99e5a13e07891c6426e8be9293036f5fe1075dbc3634ddf670d5e4032295373c11f8b25e8c3af8787c8db9094aba45197645e66571fc9dfd921f3930dcf

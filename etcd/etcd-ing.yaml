@@ -3,11 +3,9 @@ kind: Ingress
 metadata:
   name: etcd-ingress
   namespace: sensugo
-  annotations:
-    kubernetes.io/ingress.class: private-nginx
 spec:
   rules:
-  - host: sensugo-prod-etcd.mediaiqdigital.com
+  - host: sensugo-etcd.example.com
     http:
       paths:
       - backend:

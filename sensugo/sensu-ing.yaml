@@ -3,18 +3,15 @@ kind: Ingress
 metadata:
   name: sensugo-ingress
   namespace: sensugo
-  annotations:
-    kubernetes.io/ingress.class: private-nginx
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   rules:
-  - host: sensugo-backend.mediaiqdigital.com
+  - host: sensugo-backend.example.com
     http:
       paths:
       - backend:
           serviceName: sensu-backend
           servicePort: 8080
-  - host: functional-monitoring.mediaiqdigital.com
+  - host: sensu-dashboard.example.com
     http:
       paths:
       - backend:

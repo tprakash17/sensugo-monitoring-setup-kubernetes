@@ -1,8 +1,0 @@
-api_version: core/v2
-type: Asset
-metadata:
-  namespace: devops
-  name: python-sample
-spec:
-  url: https://s3.console.aws.amazon.com/s3/object/miq-sensu-plugins/functional_monitoring/python-sample.tar.gz
-  sha512: 775dbcc89bef39ea3c1d02617af92b8a17ebaa4da6191e6c454214133bf2cb1e9e97ed6200ed926e035a070747d201b8d885ff49ab8211fe9310bd5b5ce1a99a

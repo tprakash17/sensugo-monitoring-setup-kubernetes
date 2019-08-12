@@ -3,11 +3,9 @@ kind: Ingress
 metadata:
   name: sensugo-ingress
   namespace: sensugo
-  annotations:
-    kubernetes.io/ingress.class: private-nginx
 spec:
   rules:
-  - host: sensugo-prod-grafana.mediaiqdigital.com
+  - host: sensugo-grafana.mediaiqdigital.com
     http:
       paths:
       - backend:

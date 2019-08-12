@@ -83,13 +83,6 @@ spec:
               --initial-cluster ${PEERS} \
               --initial-cluster-state new \
               --data-dir /var/run/etcd/default.etcd
-      nodeSelector:
-          app: sensugo
-      tolerations:
-        - effect: NoExecute
-          key: app
-          operator: Equal
-          value: sensugo
   volumeClaimTemplates:
   - metadata:
       name: data
