@@ -1,0 +1,26 @@
+type: CheckConfig
+api_version: core/v2
+metadata:
+  name: jenkins-proxy-check
+  namespace: demo
+spec:
+  command: metrics-curl.rb -u https://builds-corp.mediaiqdigital.com/login
+  handlers:
+  - slack
+  - influxdb
+  high_flap_threshold: 0
+  interval: 60
+  low_flap_threshold: 0
+  output_metric_format: graphite_plaintext
+  output_metric_handlers:
+  - influxdb
+  publish: true
+  round_robin: true
+  runtime_assets:
+  - ruby-runtime
+  - sensu-plugins-http
+  - check-plugins
+  subscriptions:
+  - sensugo
+  timeout: 0
+  ttl: 0

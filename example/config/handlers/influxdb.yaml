@@ -1,0 +1,17 @@
+type: Handler
+api_version: core/v2
+metadata:
+  name: influxdb
+  namespace: devops
+spec:
+  command: sensu-influxdb-handler -d sensu
+  env_vars:
+  - INFLUXDB_ADDR=http://influxdb-svc.influxdb.svc.cluster.local:8086
+  - INFLUXDB_USER=sensu
+  - INFLUXDB_PASS=password
+  filters: null
+  handlers: null
+  runtime_assets:
+  - influxdb-handler
+  timeout: 0
+  type: pipe

@@ -1,0 +1,29 @@
+type: CheckConfig
+api_version: core/v2
+metadata:
+  name: sample-python-check
+  namespace: devops
+spec:
+  check_hooks: null
+  command: rancher-login.py
+  env_vars: null
+  handlers:
+  - influxdb
+  - slack
+  high_flap_threshold: 0
+  interval: 86400
+  low_flap_threshold: 0
+  output_metric_format: 
+  output_metric_handlers: graphite_plaintext
+  - influxdb
+  proxy_entity_name: ""
+  publish: true
+  round_robin: true
+  runtime_assets:
+  - python-sample
+  stdin: false
+  subdue: null
+  subscriptions:
+  - functional_monitoring
+  timeout: 0
+  ttl: 0

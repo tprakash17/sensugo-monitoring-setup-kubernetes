@@ -1,0 +1,12 @@
+---
+type: Entity
+api_version: core/v2
+metadata:
+  name: jenkins
+  namespace: demo
+  labels:
+    proxy_type: website
+    url: https://builds-corp.mediaiqdigital.com/login
+spec:
+  entity_class: proxy
+  subscriptions: [ "jenkins" ]
