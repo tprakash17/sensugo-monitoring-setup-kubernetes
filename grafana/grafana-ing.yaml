@@ -5,7 +5,7 @@ metadata:
   namespace: sensugo
 spec:
   rules:
-  - host: sensugo-grafana.mediaiqdigital.com
+  - host: sensugo-grafana.example.com
     http:
       paths:
       - backend:
