@@ -1,0 +1,29 @@
+##
+##sensu-backend connects with etcd which this deployment assumes deployed in etcd namespace. If there is a change, please update the command accrodingly.
+##
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sensu-backend
+  namespace: sensugo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: sensu-backend
+      labels:
+        app: sensu-backend
+    spec:
+      containers:
+        - name: sensu-backend
+          image: sensu/sensu:latest
+          command: ["/opt/sensu/bin/sensu-backend", "start", "--log-level", "debug"]
+          ports:
+            - protocol: TCP
+              containerPort: 8080
+            - protocol: TCP
+              containerPort: 8081
+            - protocol: TCP
+              containerPort: 3000
+

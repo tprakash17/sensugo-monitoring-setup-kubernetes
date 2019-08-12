@@ -1,0 +1,51 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app: devops-sts
+  name: devops-sensu-agent
+  namespace: sensugo
+spec:
+  serviceName: devops-sts
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-sts
+  template:
+    metadata:
+      labels:
+        app: devops-sts
+      name: devops-sts
+    spec:
+      containers:
+      - command:
+        - /opt/sensu/bin/sensu-agent
+        - start
+        - --log-level
+        - debug
+        env:
+        - name: SENSU_BACKEND_URL
+          value: ws://sensu-backend.sensugo.svc.cluster.local:8081
+        - name: SENSU_NAMESPACE
+          value: devops
+        - name: SENSU_SUBSCRIPTIONS
+          value: monitoring
+        - name: SENSU_KEEPALIVE_INTERVAL
+          value: "5"
+        - name: SENSU_KEEPALIVE_TIMEOUT
+          value: "10"
+        - name: SENSU_DEREGISTER
+          value: "true"
+        - name: SENSU_STATSD_EVENT_HANDLERS
+          value: statsd
+        image: <SENSU-AGENT-IMAGE>
+        imagePullPolicy: IfNotPresent
+        name: sensu-agent
+      nodeSelector:
+        app: sensugo
+      tolerations:
+      - effect: NoExecute
+        key: app
+        operator: Equal
+        value: sensugo
